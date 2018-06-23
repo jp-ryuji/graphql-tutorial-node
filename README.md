@@ -1,16 +1,23 @@
 - The repository is based on the course: [The basics of GraphQL and Apollo](https://www.udemy.com/introduction-to-graphql-and-apollo-building-modern-apis)
 - Despite the name, The basics of GraphQL and Apollo, there's no material on Apollo. Just accessing APIs via graphiql.
 
-#### How to use
+### Getting Started
 
-1. Run the server
+1. Install the packages
+  ```
+  $ yarn install
+  ```
+
+2. Run the server
   ```
   $ yarn start
   ```
 
-2. Access: http://localhost:4000/graphiql
+### How to access APIs via graphiql
 
-3. Input the followings for Query.
+1. Access: http://localhost:4000/graphiql
+
+2. Input the followings for Query.
 ```
 {
   authors {
@@ -32,7 +39,7 @@
 }
 ```
 
-4. Input the followings for Mutation.
+3. Input the followings for Mutation.
 ```
 mutation {
   addAuthor(name: "AuthorFoo", age: 20, books: ["BookBar", "BookBuzz"]) {
