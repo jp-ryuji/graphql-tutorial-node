@@ -5,6 +5,8 @@
   "author": "Ryuji Eguchi <jp.ryuji@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "babel-node": "babel-node server.js",
+    "start": "nodemon --exec npm run babel-node server.js",
     "precommit": "lint-staged",
     "lint:fix-all": "eslint --fix *.js **/*.js"
   },
