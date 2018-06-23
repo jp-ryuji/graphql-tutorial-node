@@ -1,6 +1,7 @@
 import express from 'express';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 import schema from './schema';
 
 const server = express();
@@ -11,6 +12,13 @@ server.use(
     endpointURL: '/graphql'
   })
 );
+
+mongoose.connect('mongodb://localhost/graphqlTutorial');
+
+const { connection } = mongoose;
+connection.once('open', () => {
+  console.log('connection to database was successful!');
+});
 
 server.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
 
