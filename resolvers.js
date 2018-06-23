@@ -1,28 +1,17 @@
-const authors = [
-  {
-    id: 21,
-    name: 'JK Rowling',
-    age: 50,
-    books: ['Harry Potter and the Goblet of Fire', 'Harry Potter and the Prisoner of Azkaban']
-  },
-  {
-    id: 34,
-    name: 'George RR Martin',
-    age: 60,
-    books: ['GOT - Song of Ice and Fire', 'GOT - A Dance with Dragons']
-  },
-  {
-    id: 12,
-    name: 'Stephen King',
-    age: 60,
-    books: ['The Green Mile', 'Carrie']
-  }
-];
+import AuthorModel from './models/author';
 
 const resolvers = {
   Query: {
-    authors: () => authors,
-    author: (root, { id }) => authors.find(author => author.id === id)
+    authors: (root, { age }) => AuthorModel.find({ age }),
+    author: (root, { id }) => AuthorModel.findOne({ id })
+  },
+  Mutation: {
+    addAuthor: (root, { name, age, books }) => {
+      const author = new AuthorModel({ age, name, books });
+      return author.save();
+    },
+    deleteAuthor: (root, { id }) => AuthorModel.findOneAndRemove({ id }),
+    updateAuthor: (root, { id, name }) => AuthorModel.findOneAndUpdate({ id }, { name })
   }
 };
 
