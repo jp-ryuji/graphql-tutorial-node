@@ -23,7 +23,7 @@
       "printWidth": 150
     }],
     "func-names": [2, "as-needed"],
-    "max-len": [2, { "ignoreComments": true }],
+    "max-len": [2, { "code": 150, "ignoreComments": true }],
     "no-console": 0,
     "no-underscore-dangle": [2, { "allowAfterThis": true }],
     "no-unused-vars": [2, { "argsIgnorePattern": "^_" }],
