@@ -5,6 +5,8 @@
   "author": "Ryuji Eguchi <jp.ryuji@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "babel-node": "babel-node server.js",
+    "start": "nodemon --exec npm run babel-node server.js",
     "precommit": "lint-staged",
     "lint:fix-all": "eslint --fix *.js **/*.js"
   },
@@ -15,7 +17,9 @@
     ]
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.4",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^5.0.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",
@@ -23,6 +27,10 @@
     "eslint-plugin-prettier": "^2.6.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.0",
+    "nodemon": "^1.17.5",
     "prettier": "^1.13.5"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
   }
 }
