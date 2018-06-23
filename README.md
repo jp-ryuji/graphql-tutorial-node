@@ -1,4 +1,5 @@
-The repository is based on the course: [The basics of GraphQL and Apollo](https://www.udemy.com/introduction-to-graphql-and-apollo-building-modern-apis)
+- The repository is based on the course: [The basics of GraphQL and Apollo](https://www.udemy.com/introduction-to-graphql-and-apollo-building-modern-apis)
+- Despite the name, The basics of GraphQL and Apollo, there's no material on Apollo. Just accessing APIs via graphiql.
 
 #### How to use
 
