@@ -4,6 +4,16 @@
   "main": "index.js",
   "author": "Ryuji Eguchi <jp.ryuji@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "precommit": "lint-staged",
+    "lint:fix-all": "eslint --fix *.js **/*.js"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "babel-eslint": "^8.2.4",
     "eslint": "^5.0.0",
